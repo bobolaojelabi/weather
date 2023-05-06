@@ -1,0 +1,47 @@
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle, #1c7fc2 0%, #009cdc 28%, #0d9ade 32%, #011844 100%);
+}
+
+#search::placeholder{
+    color: #fff;
+}
+
+.weather{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.detail{
+    background-color: rgba(255,255, 255, 0.2);
+    border-radius: 20px; 
+}
+.temperature{
+     background-color: rgba(255,255, 255, 0.2);
+    border-radius: 20px; 
+}
+.image{
+    max-width: 50%;
+}
+
+.forecast{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.forecast_item{
+    background-color: rgba(255,255, 255, 0.2);
+    border-radius: 20px;
+    margin: 0 5px 5px;
+    padding: 20px 5px 10px;
+    box-sizing: border-box;
+    min-width: 150px;
+    width: calc(20% - 20px);
+}
+
+.forecast_item img{
+    max-width: 50%;
+}

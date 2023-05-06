@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+        <!--bootstrap link-->
+        <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!--css link-->
+        <link href="{{ url_for('static',filename='style.css')}}" rel="stylesheet">
+        <!--bootstrap icon-->
+        <link href="{{ url_for('static',filename='bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-white m-auto py-2">
+        <form class="row justify-content-center mt-3" method="post" action="">
+            <div class="col-7 p-4">
+                <input type="search" class="form-control bg-dark bg-opacity-25 text-white" placeholder="Your City" id="search" name="city">
+            </div>
+            <div class="col-2 p-4">
+            <button type="submit" class="btn btn-warning">Search</button>
+            </div>
+        </form>
+       
+
+        <!--row2-->
+        <div class="weather">
+            <div class="detail p-5">
+                <h3 class="fw-bolder fs-3 mb-3">lagos</h3>
+
+                <p class="fs-4 my-2">Day</p>
+                <div>
+                    <p><i class="bi bi-droplet-half me-2"></i><span>humilty</span>%</p>
+                    <p><span>wind,5</span>m/s</p>
+                    <p><span>pressure</span>hPa</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='image/sun.png')}}" alt="sun" class="image">
+            <div class="temparature pt-5">
+                <h3 class="fs-2 mt-3 fw-normal"><span>+25</span>&deg;C</h3>
+            </div>
+        </div>
+
+        <!--row3-->
+        <div class="forecast">
+            <article class="forecast_item">
+                <img src="{{ url_for('static', filename='image/cloud.png')}}" alt="cloud" >
+                <h3 class="mb-3">day</h3>
+                <p><span>+25</span>&deg;C</p>
+            </article>
+            <article class="forecast_item">
+                <img src="{{ url_for('static', filename='image/cloud.png')}}" alt="cloud" >
+                <h3 class="mb-3">day</h3>
+                <p><span>+25</span>&deg;C</p>
+            </article>
+            <article class="forecast_item">
+                <img src="{{ url_for('static', filename='image/cloud.png')}}" alt="cloud" >
+                <h3 class="mb-3">day</h3>
+                <p><span>+25</span>&deg;C</p>
+            </article>
+            <article class="forecast_item">
+                <img src="{{ url_for('static', filename='image/cloud.png')}}" alt="cloud" >
+                <h3 class="mb-3">day</h3>
+                <p><span>+25</span>&deg;C</p>
+            </article>
+            <article class="forecast_item">
+                <img src="{{ url_for('static', filename='image/cloud.png')}}" alt="cloud" >
+                <h3 class="mb-3">day</h3>
+                <p><span>+25</span>&deg;C</p>
+            </article>
+        </div>
+        
+            
+    </div>
+    
+</body>
+</html>

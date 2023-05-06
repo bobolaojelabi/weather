@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+        <!--bootstrap link-->
+        <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!--css link-->
+        <link href="{{ url_for('static',filename='style.css')}}" rel="stylesheet">
+        <!--bootstrap icon-->
+        <link href="{{ url_for('static',filename='bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-white m-auto">
+        <form class="row justify-content-center mt-md-3" method="post" action="">
+            <div class="col-md-7 p-4">
+                <input type="search" class="form-control bg-dark bg-opacity-25 text-white mx-auto" placeholder="Your City" id="search" name="city">
+            </div>
+            <div class="col-md-2 p-4">
+            <button type="submit" class="btn btn-warning m-md-auto">Search</button>
+            </div>
+        </form>
+       
+
+        <!--row2-->
+        <div class="weather">
+            <div class="detail px-3">
+                <h3 class="fw-bolder fs-3 my-3">{{ weather.city}}<span class="fs-6 fw-light">,{{weather.country}}</span></h3>
+
+                <h4 class="fs-3 mb-3">{{ weather.main}} <span class="fs-3 fw-light">: {{ weather.description}}</span></h4>
+               
+                <p><i class="bi bi-droplet-half me-2"></i><span>{{ weather.humidity}}</span>%</p>
+                <p><i class="bi bi-cloud-fog2-fill me-2"></i><span>{{weather.wind}}</span>m/s</p>
+                <p><i class="bi bi-p-circle-fill me-2"></i><span>{{weather.pressure}}</span>hPa</p>
+            </div>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="sun" width='300px'class="image">
+            <div class="temperature pt-5">
+                <h3 class="fs-2 fw-normal"><span>+{{ weather.temperature}}</span>&deg;C</h3>
+            </div>
+        </div>
+
+        <!--row3-->
+        <div class="forecast overflow-auto mt-4">
+            {% for i in days[:5 ]%}
+            <article class="forecast_item">
+                <h3 class="mb-3">{{i.date}}</h3>
+                <img src='http://openweathermap.org/img/wn/{{ i.icon }}.png' alt="cloud" >
+                <p>{{i.time}}</p>
+                <p><span>{{i.temp}}</span>&deg;C</p>
+                <p>{{i.main}}: {{i.description}}</p>
+            </article>
+            {% endfor %}
+        </div>
+            
+    </div>
+    
+</body>
+</html>
